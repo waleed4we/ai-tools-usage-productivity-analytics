@@ -1,0 +1,31 @@
+tool_id,tool_name,category,pricing_model
+1,ChatGPT,Coding,Freemium
+2,Claude,Coding,Freemium
+3,GitHub Copilot,Coding,Subscription
+4,Google Antigravity,Coding,Free
+5,ChatGPT,Writing,Freemium
+6,Claude,Writing,Freemium
+7,Grammarly,Writing,Freemium
+8,Jasper,Writing,Subscription
+9,Perplexity,Research,Freemium
+10,NotebookLM,Research,Free
+11,Claude,Research,Freemium
+12,Midjourney,Image Generation,Subscription
+13,ChatGPT Images,Image Generation,Freemium
+14,Adobe Firefly,Image Generation,Freemium
+15,Leonardo AI,Image Generation,Freemium
+16,Sora,Video Generation,Subscription
+17,Runway,Video Generation,Freemium
+18,ChatGPT,Data Analysis,Freemium
+19,Claude,Data Analysis,Freemium
+20,Julius AI,Data Analysis,Freemium
+21,Notion AI,Productivity,Subscription
+22,Microsoft Copilot,Productivity,Freemium
+23,Google Gemini,Productivity,Freemium
+24,NotebookLM,Education,Free
+25,Khanmigo,Education,Subscription
+26,Jasper,Marketing,Subscription
+27,Copy.ai,Marketing,Freemium
+28,Canva Magic Studio,Marketing,Freemium
+29,Intercom Fin,Customer Support,Subscription
+30,Zendesk AI,Customer Support,Subscription
