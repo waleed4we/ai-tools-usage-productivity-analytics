@@ -24,26 +24,11 @@
 </div>
 <br>
 An end-to-end **PostgreSQL analytics project** exploring AI tool adoption, usage behavior, productivity, subscriptions, and revenue — built on a synthetically generated relational dataset of users, AI tools, usage activity, subscriptions, and payments.
+<br/>
+<br/>
 
-> [!NOTE]
-**Pipeline:** Data Generation → Database Design → Loading → Validation → SQL Analysis → Business Findings → Recommendations
+**Pipeline :**  Data Generation → Database Design → Loading → Validation → SQL Analysis → Business Findings → Recommendations
 
-## 📑 Table of Contents
-
-- [Overview](#-overview)
-- [Database Architecture](#️-database-architecture)
-- [Dataset](#-dataset)
-- [PostgreSQL Analysis](#-postgresql-analysis)
-- [Key Results](#-key-results)
-- [Key Findings](#-key-findings)
-- [Strategic Recommendations](#-strategic-recommendations)
-- [Caveats](#️-caveats)
-- [Technologies](#️-technologies)
-- [Project Structure](#-project-structure)
-- [How to Run](#️-how-to-run)
-- [Author](#-author)
-
----
 
 ## 📌 Overview
 
