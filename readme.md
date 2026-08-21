@@ -22,9 +22,7 @@
 <img src="https://img.shields.io/badge/Payments-31%2C214-red?style=flat-square"/>
 
 </div>
-
----
-
+<br>
 An end-to-end **PostgreSQL analytics project** exploring AI tool adoption, usage behavior, productivity, subscriptions, and revenue — built on a synthetically generated relational dataset of users, AI tools, usage activity, subscriptions, and payments.
 
 > [!NOTE]
