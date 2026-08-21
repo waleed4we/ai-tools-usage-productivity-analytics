@@ -1,140 +1,223 @@
+<div align="center">
+
 # 🤖 AI Tools Usage & Productivity Analytics
 
-<p align="center">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
-  <img src="https://img.shields.io/badge/pgAdmin-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgAdmin"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"/>
-  <img src="https://img.shields.io/badge/psycopg2--binary-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="psycopg2-binary"/>
-  <img src="https://img.shields.io/badge/ChatGPT-412991?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT"/>
-</p>
+### *Turning raw AI usage data into real business insight*
 
-<p align="center"><b>An end-to-end PostgreSQL analytics project exploring AI tool adoption, usage behavior, productivity, subscriptions, and revenue.</b></p>
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+<img src="https://img.shields.io/badge/pgAdmin-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgAdmin"/>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"/>
+<img src="https://img.shields.io/badge/psycopg2--binary-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="psycopg2-binary"/>
+<img src="https://img.shields.io/badge/ChatGPT-412991?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT"/>
+
+<br/>
+
+<img src="https://img.shields.io/badge/Users-10%2C000-blueviolet?style=flat-square"/>
+<img src="https://img.shields.io/badge/AI%20Tools-30-blue?style=flat-square"/>
+<img src="https://img.shields.io/badge/Usage%20Records-477%2C087-success?style=flat-square"/>
+<img src="https://img.shields.io/badge/Subscriptions-4%2C736-orange?style=flat-square"/>
+<img src="https://img.shields.io/badge/Payments-31%2C214-red?style=flat-square"/>
+
+</div>
+
+---
+
+An end-to-end **PostgreSQL analytics project** exploring AI tool adoption, usage behavior, productivity, subscriptions, and revenue — built on a synthetically generated relational dataset of users, AI tools, usage activity, subscriptions, and payments.
+
+> [!NOTE]
+> **Pipeline:** Data Generation → Database Design → Loading → Validation → SQL Analysis → Business Findings → Recommendations
+
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Database Architecture](#️-database-architecture)
+- [Dataset](#-dataset)
+- [PostgreSQL Analysis](#-postgresql-analysis)
+- [Key Results](#-key-results)
+- [Key Findings](#-key-findings)
+- [Strategic Recommendations](#-strategic-recommendations)
+- [Caveats](#️-caveats)
+- [Technologies](#️-technologies)
+- [Project Structure](#-project-structure)
+- [How to Run](#️-how-to-run)
+- [Author](#-author)
 
 ---
 
 ## 📌 Overview
 
-This project uses a **synthetically generated relational dataset** (users, AI tools, usage, subscriptions, payments) to answer practical business questions: who uses AI tools, which tools/categories dominate, how usage varies by profession and experience, which pricing models and plans perform best, and where the strongest monetization opportunities lie.
-
-**Pipeline:** Data Generation → Database Design → Loading → Validation → SQL Analysis → Business Findings → Recommendations
+This project answers practical business questions: **who** uses AI tools, **which** tools and categories dominate, **how** usage varies by profession and experience level, **which** pricing models and plans perform best, and **where** the strongest monetization opportunities lie.
 
 ---
 
 ## 🗃️ Database Architecture
 
-Five interconnected tables model the relationships below:
+<div align="center">
 
 ```
-ai_tools ──┬── usage_log ── users
-           └── subscriptions ── payments
+                    ┌─────────────┐
+                    │  ai_tools   │
+                    └──────┬──────┘
+                ┌───────────┴───────────┐
+                ▼                       ▼
+        ┌──────────────┐        ┌─────────────────┐
+        │  usage_log   │        │  subscriptions   │
+        └──────┬───────┘        └────────┬─────────┘
+               ▼                         ▼
+        ┌──────────────┐        ┌─────────────────┐
+        │    users     │        │    payments      │
+        └──────────────┘        └─────────────────┘
 ```
+
+</div>
 
 - One user → many usage records & subscriptions
 - One AI tool → many usage records & subscriptions
 - One subscription → many payments
 
+<div align="center">
+
 | Table | Key Fields | Purpose |
-|---|---|---|
-| 🤖 `ai_tools` | Tool ID, Name, Category, Pricing Model | Tool/category adoption & pricing |
-| 👤 `users` | User ID, Country, Profession, Experience, Signup Date | Segmentation, geography |
-| 📈 `usage_log` | Usage ID, User/Tool ID, Sessions, Prompts, Tokens, Tasks | Engagement & productivity |
-| 💳 `subscriptions` | Sub ID, User/Tool ID, Plan, Price, Dates, Status | Plan adoption, MRR |
-| 💰 `payments` | Payment ID, Sub ID, Date, Amount, Status | Revenue |
+|:---:|:---|:---|
+| 🤖 `ai_tools` | Tool ID · Name · Category · Pricing Model | Tool/category adoption & pricing |
+| 👤 `users` | User ID · Country · Profession · Experience · Signup Date | Segmentation, geography |
+| 📈 `usage_log` | Usage ID · User/Tool ID · Sessions · Prompts · Tokens · Tasks | Engagement & productivity |
+| 💳 `subscriptions` | Sub ID · User/Tool ID · Plan · Price · Dates · Status | Plan adoption, MRR |
+| 💰 `payments` | Payment ID · Sub ID · Date · Amount · Status | Revenue |
+
+</div>
 
 ---
 
 ## 📊 Dataset
 
-Synthetic data covering **January 2025 – June 2026**, generated in Python (`generate_datasets.py`) using weighted distributions (country, profession, experience, profession-specific tool preferences) with ~1% controlled missing data for realism.
+Synthetic data spanning **January 2025 – June 2026**, generated in Python (`generate_datasets.py`) using weighted distributions across country, profession, experience, and profession-specific tool preferences — with ~1% controlled missing data for realism.
 
-| Metric | Value | Metric | Value |
-|---|---|---|---|
-| 👤 Users | 10,000 | 🗂️ AI Categories | 10 |
-| 🤖 AI Tools | 30 | 💵 Pricing Models | 3 |
-| 📝 Usage Records | 477,087 | 🌍 Countries | 18 |
-| 💳 Subscriptions | 4,736 | 💼 Professions | 12 |
-| 💰 Payments | 31,214 | 🎓 Experience Levels | 4 |
+<div align="center">
+
+| 👤 Users | 🤖 AI Tools | 📝 Usage Records | 💳 Subscriptions | 💰 Payments |
+|:---:|:---:|:---:|:---:|:---:|
+| **10,000** | **30** | **477,087** | **4,736** | **31,214** |
+
+| 🌍 Countries | 💼 Professions | 🎓 Experience Levels | 🗂️ AI Categories | 💵 Pricing Models |
+|:---:|:---:|:---:|:---:|:---:|
+| **18** | **12** | **4** | **10** | **3** |
+
+</div>
 
 ---
 
 ## 🐘 PostgreSQL Analysis
 
-Analysis leverages joins, CTEs, window functions (`DENSE_RANK`, `ROW_NUMBER`), subqueries, `CASE` logic, and aggregations across demographic, tool/category, pricing, usage, experience-level, revenue, and cross-category dimensions.
+<details>
+<summary><b>Click to see the SQL techniques used</b></summary>
+<br>
 
-> Full SQL queries are kept in the project's `sql/` folder rather than in this README.
+- Aggregations & `GROUP BY` / `HAVING`
+- `INNER JOIN` / `LEFT JOIN`
+- `CASE` expressions & conditional filtering
+- Subqueries & CTEs
+- Window functions — `DENSE_RANK()`, `ROW_NUMBER()`
+- `COUNT(DISTINCT ...)` & percentage calculations
+- Revenue, subscription, and user-segmentation analysis
+
+</details>
+
+> [!TIP]
+> Full SQL queries live in the project's [`sql/`](./sql) folder rather than in this README, to keep things skimmable.
 
 ---
 
 ## 📈 Key Results
 
-**Experience & Profession** — Intermediate (3,528) and Beginner (3,017) users make up 65% of the base; Students (1,634) and Software Developers (1,403) are the largest professional segments.
+**🎓 Experience & 💼 Profession**
+Intermediate (3,528) and Beginner (3,017) users make up **65%** of the base. Students (1,634) and Software Developers (1,403) are the largest professional segments.
 
-**Geography** — USA, India, and Pakistan account for 42% of users.
+**🌍 Geography**
+USA, India, and Pakistan together account for **42%** of all users.
+
+<table align="center">
+<tr>
+<td valign="top">
 
 **Pricing Models**
 
 | Model | Tools | Share |
-|---|---|---|
+|:---|:---:|:---:|
 | Freemium | 18 | 60% |
 | Subscription | 9 | 30% |
 | Free | 3 | 10% |
 
+</td>
+<td valign="top">
+
 **Top Tools by Adoption**
 
-| Tool | Unique Users | Usage Records |
-|---|---|---|
+| Tool | Users | Records |
+|:---|:---:|:---:|
 | Claude | 9,075 | 77,898 |
 | ChatGPT | 8,507 | 55,058 |
 | NotebookLM | 7,644 | 47,775 |
 
-**Highest-Intensity Categories** — Coding, Research, and Writing lead in sessions, prompts, and tokens consumed (each in the billions of tokens).
+</td>
+</tr>
+</table>
 
-**Revenue by Category** — Research ($133.8K) and Writing ($132.9K) lead, followed by Coding ($115.6K) and Data Analysis ($111.1K).
+**🔥 Highest-Intensity Categories** — Coding, Research, and Writing lead in sessions, prompts, and tokens, each consuming **billions of tokens**.
 
-**Subscription Plans** — Basic has the most subscribers (1,903) but Team generates the highest MRR ($38.3K) despite fewer subscribers (638), highlighting strong upsell potential.
+**💰 Revenue by Category** — Research ($133.8K) and Writing ($132.9K) lead, followed by Coding ($115.6K) and Data Analysis ($111.1K).
+
+**💳 Subscription Plans** — Basic has the most subscribers (1,903), but **Team generates the highest MRR** ($38.3K) with far fewer subscribers (638) — a clear upsell signal.
 
 ---
 
 ## 🧠 Key Findings
 
-1. **AI adoption is universal** — every user has at least one usage record across all experience levels; growth should focus on engagement, retention, and monetization rather than acquisition.
-2. **Freemium dominates** (60% of tools), making it the primary acquisition-to-conversion funnel.
-3. **Writing & Research** are the highest-value categories for product investment.
-4. **Coding** shows disproportionately high usage intensity relative to its user count.
-5. **Students** are the largest professional segment, signaling an education-focused opportunity.
-6. **Tool preference is profession-specific** (e.g., Developers → GitHub Copilot, Students → Khanmigo, Analysts → ChatGPT, Researchers/Teachers → NotebookLM).
-7. **Basic is the entry plan** across all professions, with Pro/Team/Enterprise as natural upgrades.
-8. **Cross-category usage is extremely high** — 9,987 users engage with 2+ categories, creating strong cross-sell and bundling potential.
+| # | Finding | Business Meaning |
+|:---:|:---|:---|
+| 1 | **AI adoption is universal** — every user has ≥1 usage record | Focus shifts from acquisition to engagement & monetization |
+| 2 | **Freemium dominates** (60% of tools) | Primary acquisition-to-conversion funnel |
+| 3 | **Writing & Research** are top-value categories | Strong candidates for product investment |
+| 4 | **Coding** shows disproportionately high intensity | High value per user despite lower reach |
+| 5 | **Students** are the largest segment | Education-focused product opportunity |
+| 6 | **Tool preference is profession-specific** | Role-based workflows beat one-size-fits-all |
+| 7 | **Basic is the universal entry plan** | Pro/Team/Enterprise are natural upgrade paths |
+| 8 | **Cross-category usage is high** — 9,987 users use 2+ categories | Strong cross-sell & bundling potential |
 
 ---
 
 ## 💡 Strategic Recommendations
 
-- **Shift focus from adoption to engagement** — drive sessions, prompts, task completion, and paid conversion.
-- **Optimize the Freemium funnel** with usage limits, premium features, and targeted upgrade prompts.
-- **Build profession-specific experiences** for high-value segments (students, developers, analysts, marketers).
-- **Target premium upgrades** toward high-usage users based on tokens, sessions, and task completion.
-- **Protect high-value users** with stronger retention, support, and loyalty programs.
+- 🚀 **Shift focus from adoption to engagement** — drive sessions, prompts, task completion, and paid conversion
+- 💰 **Optimize the Freemium funnel** with usage limits, premium features, and targeted upgrade prompts
+- 🎯 **Build profession-specific experiences** for high-value segments
+- 💳 **Target premium upgrades** toward high-usage users
+- ⭐ **Protect high-value users** with stronger retention, support, and loyalty programs
 
 ---
 
 ## ⚠️ Caveats
 
-This is a **synthetic dataset** — findings reflect patterns within the data, not real-world AI market statistics. Metrics like "usage records" vs. "unique users" and revenue figures are scoped to specific query definitions rather than lifetime totals.
+> [!WARNING]
+> This is a **synthetic dataset** — findings reflect patterns within the data, not real-world AI market statistics. Metrics like "usage records" vs. "unique users," and revenue figures, are scoped to specific query definitions rather than lifetime totals.
 
 ---
 
 ## 🛠️ Technologies
 
+<div align="center">
+
 | Technology | Purpose |
-|---|---|
+|:---:|:---|
 | 🐘 PostgreSQL | Relational database & SQL analytics |
 | 🖥️ pgAdmin | Database management & query execution |
 | 🐍 Python | Synthetic dataset generation |
 | 🐼 Pandas / 🔢 NumPy | Data generation & manipulation |
 | 🔌 psycopg2-binary | PostgreSQL connectivity |
+
+</div>
 
 ---
 
@@ -175,11 +258,17 @@ pip install pandas numpy psycopg2-binary
 python python/generate_datasets.py
 ```
 
-Then create a PostgreSQL database, load the CSVs in dependency order (`ai_tools → users → subscriptions → usage_log → payments`), and run `sql/project_analysis.sql` in pgAdmin or your preferred SQL client.
+Then create a PostgreSQL database, load the CSVs in dependency order
+(`ai_tools → users → subscriptions → usage_log → payments`), and run
+[`sql/project_analysis.sql`](./sql/project_analysis.sql) in pgAdmin or your preferred SQL client.
 
 ---
+
+<div align="center">
 
 ## 👨‍💻 Author
 
 **Malik Waleed Hussain**
-Data Analytics / Computer Science Student
+*Data Analytics / Computer Science Student*
+
+</div>
