@@ -602,23 +602,6 @@ High-value customers should receive stronger:
 - Expansion opportunities
 
 ---
-# ⚠️ Data & Analytical Caveats
-
-### Synthetic Dataset
-The dataset is synthetic and was generated specifically for this project.
-Therefore, the findings represent patterns **within this dataset** and should not be interpreted as real-world AI market statistics.
-
-### Universal Adoption
-The 100% adoption result applies only to the registered users represented in this dataset.
-
-### Metric Definitions
-Some analysis results depend on the exact metric used.
-For example, a query measuring usage records should not be interpreted as measuring unique users.
-
-### Revenue Scope
-Certain revenue calculations are based on specific subscription/payment filters. They should therefore be interpreted according to their analytical definition rather than automatically treated as lifetime revenue.
-
----
 
 # 🛠️ Technologies Used
 
