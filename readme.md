@@ -43,7 +43,6 @@ The analysis moves beyond basic SQL querying and focuses on answering practical 
 - Where are the strongest monetization opportunities?
 - What strategic actions can be derived from the data?
 
-The overall project follows the complete data analytics workflow:
 
 **Data Generation → Database Design → Data Loading → Validation → SQL Analysis → Business Findings → Strategic Recommendations**
 
