@@ -13,6 +13,7 @@
 <img src="https://img.shields.io/badge/ChatGPT-412991?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT"/>
 
 <br/>
+<br/>
 
 <img src="https://img.shields.io/badge/Users-10%2C000-blueviolet?style=flat-square"/>
 <img src="https://img.shields.io/badge/AI%20Tools-30-blue?style=flat-square"/>
