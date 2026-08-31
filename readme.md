@@ -173,7 +173,7 @@ USA, India, and Pakistan together account for **42%** of all users.
 
 ## 💡 Strategic Recommendations
 
-- 🚀 **Shift focus from adoption to engagement** — drive sessions, prompts, task completion, and paid conversion
+- 🚀 **Shift focus from adoption to engagement** — drive sessions, prompts, task completion, & paid conversion
 - 💰 **Optimize the Freemium funnel** with usage limits, premium features, and targeted upgrade prompts
 - 🎯 **Build profession-specific experiences** for high-value segments
 - 💳 **Target premium upgrades** toward high-usage users
