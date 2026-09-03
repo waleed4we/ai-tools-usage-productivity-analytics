@@ -188,7 +188,6 @@ USING created_at::DATE;
 
 -- ai_tools , users , subscriptions , usage_log , payments , import order
 
--- Finally e
 -- Start Of Project
 
 select * from ai_tools limit 5;
