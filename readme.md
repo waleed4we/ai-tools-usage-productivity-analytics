@@ -23,7 +23,7 @@
 
 </div>
 <br>
-An End-To-End **PostgreSQL analytics project** exploring AI-tools adoption, usage behavior, productivity, subscriptions, and revenue — built on a synthetically generated relational dataset of users, AI tools, usage activity, subscriptions, and payments.
+An End To End **PostgreSQL analytics project** exploring AI-tools adoption, usage behavior, productivity, subscriptions, and revenue — built on a synthetically generated relational dataset of users, AI tools, usage activity, subscriptions, and payments.
 <br/>
 
 **Pipeline :**  Data Generation → Database Design → Loading → Validation → SQL Analysis → Business Findings → Recommendations
