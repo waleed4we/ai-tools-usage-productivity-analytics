@@ -22,10 +22,8 @@ CREATE TABLE ai_tools (
     CONSTRAINT chk_ai_tools_pricing_model
         CHECK (
             pricing_model IN (
-                'Free',
-                'Freemium',
-                'Subscription',
-                'Usage-Based'
+                'Free', 'Freemium',
+                'Subscription', 'Usage-Based'
             )
         )
 );
