@@ -47,14 +47,10 @@ CREATE TABLE users (
 );
 
 CREATE TABLE usage_log (
-    usage_id BIGINT PRIMARY KEY,
-    user_id INTEGER NOT NULL,
-    tool_id INTEGER NOT NULL,
-    usage_date DATE NOT NULL,
-    sessions INTEGER NOT NULL,
-    prompts INTEGER NOT NULL,
-    minutes_used INTEGER NOT NULL,
-    tokens_used BIGINT NOT NULL,
+    usage_id BIGINT PRIMARY KEY, user_id INTEGER NOT NULL,
+    tool_id INTEGER NOT NULL,  usage_date DATE NOT NULL,
+    sessions INTEGER NOT NULL,  prompts INTEGER NOT NULL,
+    minutes_used INTEGER NOT NULL, tokens_used BIGINT NOT NULL,
     tasks_completed INTEGER NOT NULL,
     CONSTRAINT fk_usage_user
         FOREIGN KEY (user_id)
