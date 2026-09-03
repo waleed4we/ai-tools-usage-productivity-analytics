@@ -12,16 +12,11 @@ CREATE TABLE ai_tools (
     CONSTRAINT chk_ai_tools_category
         CHECK (
             category IN (
-                'Coding',
-                'Writing',
-                'Research',
-                'Image Generation',
-                'Video Generation',
-                'Data Analysis',
-                'Productivity',
-                'Education',
-                'Marketing',
-                'Customer Support'
+                'Coding', 'Writing',
+                'Research', 'Image Generation',
+                'Video Generation', 'Data Analysis',
+                'Productivity', 'Education',
+                'Marketing', 'Customer Support'
             )
         ),
     CONSTRAINT chk_ai_tools_pricing_model
