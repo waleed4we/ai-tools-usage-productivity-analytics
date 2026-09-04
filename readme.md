@@ -2,7 +2,7 @@
 
 # 🤖 AI Tools Usage & Productivity Analytics
 
-### ***Turning raw AI usage data into real useful business insights***
+### *Turning raw AI usage data into real useful business insights*
 
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
 <img src="https://img.shields.io/badge/pgAdmin-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgAdmin"/>
