@@ -116,7 +116,7 @@ Synthetic data spanning **January 2025 – June 2026**, generated in Python (`ge
 ## 📈 Key Results
 
 **🎓 Experience & 💼 Profession**
-Intermediate (3,528) and Beginner (3,017) users make up **65%** of the base. Students (1,634) and Software Developers (1,403) are the largest professional segments.
+Intermediate (3,528) And Beginner (3,017) Users Make Up **65%** Of The Base. Students (1,634) and Software Developers (1,403) are the largest professional segments.
 
 **🌍 Geography**
 USA, India, and Pakistan together account for **42%** of all users.
