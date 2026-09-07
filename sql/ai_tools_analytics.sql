@@ -303,7 +303,7 @@ select * from table_cte
 where table_cte.ranking = 1
 order by number_of_users desc;
 
-
+-- Another solution
 WITH experience_counts AS (
     SELECT
         profession,
